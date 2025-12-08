@@ -23,7 +23,7 @@ let newPath = "";
 let i = 0;
 let firstBox = "-1";
 let secondBox = "-1";
-while (path.split("-").length != data.length) {
+while (newPath.split("-").length != data.length) {
   const boxes = range[i][0].split("-");
   i++;
   firstBox = boxes[0].toString();
