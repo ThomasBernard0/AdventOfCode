@@ -26,7 +26,10 @@ const check = (n, fft, dac) => {
     return fft && dac ? 1 : 0;
   }
   const next = map.get(n) ?? [];
-  const nbOfPaths = next.reduce((acc, i) => acc + check(i, fft, dac), 0);
+  let nbOfPaths = 0;
+  for (const val of next) {
+    nbOfPaths += check(val, fft, dac);
+  }
   cache.set(key, nbOfPaths);
   return nbOfPaths;
 };
